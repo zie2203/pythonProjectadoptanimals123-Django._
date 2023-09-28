@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title  %}shelter {% endblock %}
+{% block style  %}
+{% endblock %}
+
+{% block body  %}
+<br><br>
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="row">
+            <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Life is better with a furry friend. Come meet our brood</h1>
+      <p class="lead my-3">We have hundreds of animals waiting eagerly to find their forever homes. Many of them have been rescued from the streets and each of them is deserving of a loving, caring family they can call their own.
+          It’s a lot easier to adopt than you think. We promise. And we’re here to guide you every step of the way. </p>
+      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+    </div>
+    <div class="col-lg-6 px-0 rounded-circle">
+    <img width="450" src="media\mylist\images\newadopt.jpg" class="float-end "><br>
+
+    </div>
+    </div>
+
+  </div>
+<br><br>
+<span class="badge text-black bg-light">
+       <h1>Choosing the right pet...</h1>
+</span>
+<br><br><br>
+<div class="row">
+    {% for animals in myylist %}
+          <div class="col-md-6 text-center">
+            <h2>{{animals.animal_name}} </h2>
+            <img width="200" height="180" src="media/{{animals.animal_image}}" class="mx-auto"><br/>
+            <h5>{{animals.animal_description}}</h5>
+            <h6 class="text-secondary">Posted on {{animals.animal_published_date_time}}</h6>
+            <button type="button" class="btn btn-secondary">Know more</button>
+             <br><br>
+          </div>
+    {% endfor %}
+</div>
+{% endblock %}
